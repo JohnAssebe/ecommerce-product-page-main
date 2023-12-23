@@ -1,8 +1,15 @@
-# React + Vite
+<h4>Welcome !</h4>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>Project preview</p>
 
-Currently, two official plugins are available:
+<h5>desktop size preview</h5>
+<img src="./design/desktop-design.jpg" alt="desktop size"/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h5>Mobile size preview</h5>
+<img src="./design/mobile-design.jpg" alt="mobile size"/>
+
+<p>
+If you find this repository useful, please consider giving it a star ⭐️!
+</p>
+
+<h4>Thank you for your support! 🙌</h4>
