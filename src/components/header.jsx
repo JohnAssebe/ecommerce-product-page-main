@@ -8,7 +8,7 @@ const Header = () => {
   const toggleMenuBar = () => setMenuBar((visible) => !visible);
   return (
     <div className="w-full">
-      <nav className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 md:px-2 py-6 border-b">
+      <nav className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 md:px-2 py-10 border-b">
         <div className="flex items-center justify-center gap-4 md:gap-10">
           <img
             src={menuIcon}
