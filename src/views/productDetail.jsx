@@ -7,7 +7,7 @@ const ProductDetail = () => {
     <div className="w-full">
       <section className="max-w-[1200px] mx-auto px-2 flex items-center justify-center mt-8">
         <div className="flex flex-col flex-wrap items-center justify-center gap-6 px-3 basis-1/2">
-          <div className="w-[26rem] h-96 rounded-2xl bg-orange">
+          <div className="w-[24.5rem] h-96 rounded-2xl bg-orange">
             <img
               src={mainImages[imageIndex]}
               alt="product"
