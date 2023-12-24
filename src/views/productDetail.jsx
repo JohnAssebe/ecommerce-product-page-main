@@ -22,7 +22,7 @@ const ProductDetail = () => {
 
   return (
     <div className="w-full">
-      <section className="max-w-[1200px] mx-auto px-2 flex flex-col md:flex-row items-center justify-center md:mt-16 gap-8 md:gap-0">
+      <section className="max-w-[1200px] mx-auto md:px-2 flex flex-col md:flex-row items-center justify-center md:mt-16 gap-8 md:gap-0">
         <div className="flex-col flex-wrap items-center justify-center hidden gap-6 px-3 md:flex md:basis-1/2">
           <div className="w-[24.5rem] h-96 rounded-2xl bg-orange">
             <img
@@ -54,7 +54,7 @@ const ProductDetail = () => {
           <img
             src={mainImages[slideCounter]}
             alt="product"
-            className="object-cover w-full rounded-md h-80 sm:h-[400px]"
+            className="object-cover w-full rounded-md h-80 sm:h-[460px]"
           />
           <div
             className={`absolute flex items-center justify-center -translate-y-1/2 bg-white rounded-full w-10 h-10 left-4 top-1/2 `}
