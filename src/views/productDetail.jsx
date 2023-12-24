@@ -19,7 +19,6 @@ const ProductDetail = () => {
   const prevSlide = () =>
     setSlideCounter((count) => (count - 1 > 0 ? count - 1 : count + 3) % 4);
 
-  console.log(slideCounter);
   return (
     <div className="w-full">
       <section className="max-w-[1200px] mx-auto px-2 flex flex-col md:flex-row items-center justify-center md:mt-16 gap-8 md:gap-0">
