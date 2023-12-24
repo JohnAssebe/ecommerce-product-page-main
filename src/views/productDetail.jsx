@@ -11,13 +11,14 @@ const ProductDetail = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [slideCounter, setSlideCounter] = useState(0);
   const [countProduct, setCountProduct] = useState(1);
+
   const increaseCounter = () => setCountProduct((count) => (count += 1));
   const decreaseCounter = () =>
     countProduct > 0 && setCountProduct((count) => (count -= 1));
 
   const nextSlide = () => setSlideCounter((count) => (count + 1) % 4);
   const prevSlide = () =>
-    setSlideCounter((count) => (count - 1 > 0 ? count - 1 : count + 3) % 4);
+    setSlideCounter((count) => (count > 1 ? count - 1 : count + 3) % 4);
 
   return (
     <div className="w-full">
