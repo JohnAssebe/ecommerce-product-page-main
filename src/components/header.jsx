@@ -3,9 +3,11 @@ import cartImage from "../assets/images/icon-cart.svg";
 import profileImage from "../assets/images/image-avatar.png";
 import menuIcon from "../assets/images/icon-menu.svg";
 import closeMenu from "../assets/images/icon-close.svg";
+import { useProductStore } from "../store/productStore";
 const Header = () => {
   const [menuBar, setMenuBar] = useState(false);
   const toggleMenuBar = () => setMenuBar((visible) => !visible);
+  const products = useProductStore((state) => state.products);
   return (
     <div className="w-full">
       <nav className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 md:px-2 py-10 border-b">
@@ -28,7 +30,12 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex items-center justify-center gap-8">
-          <img src={cartImage} alt="cart" />
+          <div className="relative">
+            <img src={cartImage} alt="cart" />
+            <div className="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-xs text-white translate-x-3 -translate-y-1/2 rounded-full bg-orange">
+              {products}
+            </div>
+          </div>
           <div className="w-10 h-10 rounded-full">
             <img
               src={profileImage}
