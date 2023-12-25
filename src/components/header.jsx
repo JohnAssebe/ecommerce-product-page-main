@@ -4,10 +4,19 @@ import profileImage from "../assets/images/image-avatar.png";
 import menuIcon from "../assets/images/icon-menu.svg";
 import closeMenu from "../assets/images/icon-close.svg";
 import { useProductStore } from "../store/productStore";
+import CartNotification from "./cartNotification";
 const Header = () => {
   const [menuBar, setMenuBar] = useState(false);
-  const toggleMenuBar = () => setMenuBar((visible) => !visible);
+  const toggleMenuBar = () => {
+    setMenuBar((visible) => !visible);
+    setNotificationVisible(false);
+  };
   const products = useProductStore((state) => state.products);
+  const [notificationVisible, setNotificationVisible] = useState(false);
+  const toggleNotification = () => {
+    setNotificationVisible((visible) => !visible);
+    setMenuBar(false);
+  };
   return (
     <div className="w-full">
       <nav className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 md:px-2 py-10 border-b">
@@ -29,12 +38,20 @@ const Header = () => {
             <li className="cursor-pointer">Contact</li>
           </ul>
         </div>
-        <div className="flex items-center justify-center gap-8">
-          <div className="relative">
-            <img src={cartImage} alt="cart" />
-            <div className="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-xs text-white translate-x-3 -translate-y-1/2 rounded-full bg-orange">
+        <div className="flex items-center justify-center gap-4 md:gap-8">
+          <div className="relative cursor-pointer">
+            <img src={cartImage} alt="cart" onClick={toggleNotification} />
+            <div
+              className="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-xs text-white translate-x-3 -translate-y-1/2 rounded-full bg-orange"
+              onClick={toggleNotification}
+            >
               {products}
             </div>
+            {notificationVisible && (
+              <div className="absolute top-[100%] translate-y-2 -translate-x-[70%] xl:-translate-x-1/2 z-20">
+                <CartNotification toggle={toggleNotification} />
+              </div>
+            )}
           </div>
           <div className="w-10 h-10 rounded-full">
             <img

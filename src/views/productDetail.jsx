@@ -24,7 +24,7 @@ const ProductDetail = () => {
   return (
     <div className="w-full">
       <section className="max-w-[1200px] mx-auto md:px-2 flex flex-col md:flex-row items-center justify-center md:mt-16 gap-8 md:gap-0">
-        <div className="flex-col flex-wrap items-center justify-center hidden gap-6 px-3 md:flex md:basis-1/2">
+        <div className="flex-wrap items-center justify-center hidden gap-6 px-3 reaflex-col md:flex md:basis-1/2">
           <div className="w-[24.5rem] h-96 rounded-2xl bg-orange">
             <img
               src={mainImages[imageIndex]}
@@ -51,7 +51,7 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
-        <div className="relative w-full rounded-lg md:hidden bg-orange">
+        <div className="w-full rounded-lg md:hidden bg-orange">
           <img
             src={mainImages[slideCounter]}
             alt="product"
@@ -70,7 +70,7 @@ const ProductDetail = () => {
             <img src={nextIcon} />
           </button>
         </div>
-        <div className="flex items-center justify-start md:basis-1/2 font-kumbhSans">
+        <div className="flex items-center justify-start px-2 md:basis-1/2 font-kumbhSans">
           <div className="flex flex-col items-start justify-center max-w-[400px] gap-4">
             <h4 className="font-bold uppercase text-orange">sneaker company</h4>
             <h2 className="text-4xl font-bold capitalize">
@@ -81,19 +81,22 @@ const ProductDetail = () => {
               Featuring a durabble rubber outer sole,they&apos;ll withstand
               everything the weather can offer.
             </p>
-            <div className="flex items-start justify-center gap-8 font-bold">
+            <div className="flex items-center justify-between w-full gap-8 px-2 font-bold md:justify-start md:items-start">
               <div>
                 <h3 className="text-2xl">$125.00</h3>
-                <h5 className="text-lg line-through text-grayishblue">
+                <h5 className="hidden text-lg line-through md:block text-grayishblue">
                   $250.00
                 </h5>
               </div>
               <div className="px-2 py-1 rounded-lg bg-paleOrange">
                 <p className="text-sm text-orange">50% off</p>
               </div>
+              <h5 className="text-lg line-through md:hidden text-grayishblue">
+                $250.00
+              </h5>
             </div>
-            <div className="flex flex-col items-center justify-center w-full gap-6 px-4 py-4 md:flex-row">
-              <div className="flex items-center justify-between w-full px-4 py-2 rounded-lg md:w-36 bg-paleOrange">
+            <div className="flex flex-col items-center justify-center w-full gap-6 px-2 py-4 md:flex-row">
+              <button className="flex items-center justify-between w-full px-4 py-2 rounded-lg md:w-36 bg-paleOrange">
                 <img
                   src={minusIcon}
                   onClick={decreaseCounter}
@@ -107,14 +110,17 @@ const ProductDetail = () => {
                   className="cursor-pointer"
                   alt="plus"
                 />
-              </div>
-              <div
+              </button>
+              <button
                 className="flex items-center justify-center w-full gap-3 px-6 py-3 text-sm font-bold text-white rounded-lg shadow-xl cursor-pointer md:w-fit bg-orange"
-                onClick={() => store.addProductQuantity(countProduct)}
+                onClick={() => {
+                  store.addProductQuantity(countProduct);
+                  store.updateTotalPrice();
+                }}
               >
                 <img src={cartIcon} alt="cart" className="w-4 h-4 fill-white" />
                 Add to cart
-              </div>
+              </button>
             </div>
           </div>
         </div>
