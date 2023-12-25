@@ -53,7 +53,7 @@ const Header = () => {
               </div>
             )}
           </div>
-          <div className="w-10 h-10 rounded-full">
+          <div className="w-10 h-10 duration-100 ease-in rounded-full hover:border-2 border-orange">
             <img
               src={profileImage}
               alt="profile"
